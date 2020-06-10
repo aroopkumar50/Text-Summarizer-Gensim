@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <section>
+  <div class="container p-5">
+    <!-- For demo purpose -->
+    <div class="row mb-3 text-center text-blue">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="display-4 font-weight-bold">TextRank Document Summarizer</h1>
+        <p class="lead font-weight-bold">Built by Aroop Kumar</p>
+      </div>
+    </div>
+    <!-- End -->
+
+
+    <div class="row">
+      <div class="col-lg-5 mx-auto">
+        <div class="p-5 bg-white shadow rounded-lg"><img src="https://res.cloudinary.com/mhmd/image/upload/v1557366994/img_epm3iz.png" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
+
+          <!-- Default bootstrap file upload-->
+
+          <h6 class="text-center mb-4 text-muted">
+            Upload .txt or .docx files only.
+          </h6>
+
+          <div class="custom-file overflow-hidden rounded-pill mb-5">
+            <form action = "https://textrank-summarizer-aroop.herokuapp.com/summary" method = "POST" enctype = "multipart/form-data" target=_blank>
+                <input id="customFile" name="myfile" type="file" class="custom-file-input rounded-pill" onchange="processSelectedFiles(this)" />
+                <label for="customFile" class="custom-file-label rounded-pill">Choose File</label>
+                <div class="row justify-content-center">
+                    <input type = "submit" class="mt-2 btn btn-primary"/>
+                </div>
+            </form>
+          </div>
+          <!-- End -->
+
+          <h6 class="text-center mb-4 mt-4 text-muted">
+            The application will give a 100 word summary of the document.
+          </h6>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>
+    function processSelectedFiles(fileInput) {
+  var files = fileInput.files;
+  var x = files[0].name
+  alert("File selected: " + x)
+}
+</script>
+</body>
+</html>
